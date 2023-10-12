@@ -1,0 +1,52 @@
+<main class="d-flex flex-column h-100 w-100">
+  <header class="d-flex w-100 h-center v-center">
+    <div class="logo"></div>
+    <div class="title"></div>
+  </header>
+  <section class="d-flex flex-row">
+    <div class="standings-section">
+      <div class="table-header">Standings</div> 
+      <button mat-flat-button color="primary" (click)="addNewUser()">New User</button>
+      <div class="table d-flex flex-column">
+        <div class="col-header d-flex">
+          <div class="col name">Name</div>
+          <div class="col games-won">Games Won</div>
+          <div class="col money-won">Money Won</div>
+        </div>
+        <div class="col-data d-flex flex-row" *ngFor="let user of users">
+          <div class="col name">{{user.name}}</div>
+          <div class="col games-won">{{user.betsWon || 0}}</div>
+          <div class="col money-won">{{user.moneyWon || 0}}€</div>
+        </div>
+      </div>
+    </div>
+    <div class="bets-section">
+      <div class="table-header">Bets</div>
+      <button mat-flat-button color="primary" (click)="addNewBet()">New Bet</button>
+      <div class="table d-flex flex-column">
+        <div class="col-header d-flex">
+          <div class="col title">Title</div>
+          <div class="col stake">Stake</div>
+          <div class="col match">Match</div>
+          <div class="col winner">Winner</div>
+        </div>
+        <div class="col-data d-flex flex-row" *ngFor="let bet of bets">
+          <div class="col title">{{bet.title}}</div>
+          <div class="col stake">{{bet.stake}}</div>
+          <div class="col participants">{{bet.match}}</div>
+          <div class="col winner">{{bet.winner}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="d-flex">
+    <div class="overview-section">
+      <div class="table-header">Overview</div>
+      <div class="d-flex h-center">
+        <div class="chart-div">
+          <canvasjs-chart [options]="chartOptions"></canvasjs-chart>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

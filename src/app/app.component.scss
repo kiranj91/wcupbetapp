@@ -1,0 +1,80 @@
+
+
+header {
+  height: 80px;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);
+}
+
+section {
+  gap: 10px;
+  padding: 10px;
+  > div {
+    overflow: hidden;
+    flex-grow: 1;
+    border-radius: 10px;
+    border: 1px solid #320671;
+    button {
+      margin-top: 20px;
+      margin-left: 20px;
+      display: none;
+    }
+    &.standings-section {
+      .col {
+        flex-basis: calc(100%/3);
+      }
+    }
+    &.bets-section {
+      .col {
+        flex-basis: calc(100%/4);
+      }
+    }
+    .table-header {
+      font-size: 20px;
+      padding: 20px;
+      text-transform: uppercase;
+      background: #320671;
+      color: white;
+    }
+    .table {
+      margin: 20px;
+      .col-header {
+        background: #ff00a5;
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      > div {
+        padding: 20px;
+      }
+      .col {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        &.name {
+          text-transform: uppercase;
+        }
+      }
+      .col-data {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+}
+
+.chart-div {
+  width: 600px;
+}
+
+.logo {
+ background: url('../../src/assets/images/logo.png');
+ background-size: cover;
+ height: 60px;
+ width: 200px;
+}
+
+::ng-deep {
+  .canvasjs-chart-credit {
+    display: none;
+  }
+}

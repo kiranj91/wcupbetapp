@@ -1,0 +1,72 @@
+.participants-select,
+.match-select {
+  width: 250px;
+}
+
+mat-label {
+  color: #757575;
+}
+
+.stake-div {
+  width: 200px;
+  > div {
+    padding-top: 10px;
+    gap: 10px;
+    input {
+      width: 40px;
+    }
+  }
+  .stake-value {
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #aaa;
+    padding: 10px;
+    color: white;
+  }
+}
+
+.pool-value-div {
+  padding-top: 10px;
+  .pool-value {
+    padding-top: 10px;
+    max-width: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #aaa;
+    padding: 10px;
+    color: white;
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+::ng-deep {
+  .cdk-overlay-pane {
+    margin-top: 35px;
+    margin-left: 15px;
+  }
+  .mat-select-user,
+  .mat-select-value-text {
+    text-transform: capitalize;
+  }
+  .match-option {
+    height: auto !important;
+    border-bottom: 1px solid #bbb;
+    padding: 10px !important;
+    .primary {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .date,
+    .venue {
+      font-size: 14px;
+    }
+    .mat-option-text {
+      line-height: 2em;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>New User</h1>
+<div mat-dialog-content>
+  <mat-form-field class="w-100">
+    <mat-label>Name*</mat-label>
+    <input type="text" matInput [(ngModel)]="userName">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" [mat-dialog-close]="userName" [disabled]="!userName.length">Add</button>
+  <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+</div>

@@ -1,0 +1,97 @@
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.o-auto {
+  overflow: auto;
+}
+
+.o-x-auto {
+  overflow-x: auto;
+}
+
+.o-y-auto {
+  overflow-y: auto;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-contents {
+  display: contents;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-i-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.h-center {
+  justify-content: center;
+}
+
+.h-start {
+  justify-content: flex-start;
+}
+
+.h-end {
+  justify-content: flex-end;
+}
+
+.h-space-between {
+  justify-content: space-between;
+}
+
+.v-start {
+  align-items: flex-start;
+}
+
+.v-center {
+  align-items: center;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.m-h-auto {
+  margin: 0 auto;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+

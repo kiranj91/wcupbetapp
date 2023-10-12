@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>New Bet</h1>
+<div class="d-flex flex-column">
+  <mat-form-field class="w-100">
+    <mat-label>Title*</mat-label>
+    <input type="text" matInput [(ngModel)]="betData.title">
+  </mat-form-field>
+  <mat-form-field class="match-select">
+    <mat-label>Match</mat-label>
+    <mat-select [(value)]="betData.match" name="match" (selectionChange)="onMatchSelect($event)">
+      <mat-select-trigger>
+        {{betData.match?.team1.teamSName}} vs {{betData.match?.team2.teamSName}}
+      </mat-select-trigger>
+      <mat-option class="match-option" *ngFor="let match of matches" [value]="match">
+        <div class="primary">{{match.team1.teamSName}} vs {{match.team2.teamSName}}</div>
+        <div class="date">{{match.date}}</div>
+        <div class="venue">{{match.venueInfo.city}}</div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="participants-select">
+    <mat-label>Participants</mat-label>
+    <mat-select [(value)]="betData.users" multiple (selectionChange)="onUsersSelect($event)">
+      <mat-select-trigger>
+        {{betData.users?.join(', ') || ''}}
+      </mat-select-trigger>
+      <mat-option *ngFor="let user of users" [value]="user">
+        <div class="mat-select-user">{{user}}</div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="stake-div d-flex flex-column">
+    <mat-label>Stake</mat-label>
+    <div class="d-flex flex-row">
+      <button mat-mini-fab color="warn" (click)="decrementStake()">
+        <mat-icon>remove</mat-icon>
+      </button>
+      <div class="stake-value d-flex v-center">{{betData.stake}} €</div>
+      <button mat-mini-fab color="primary" (click)="incrementStake()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="pool-value-div">
+    <mat-label>Pool Value</mat-label>
+    <div class="pool-value d-flex v-center h-center">{{betData.poolValue}} €</div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" [mat-dialog-close]="betData" [disabled]="!betData.title.length">Add</button>
+  <button mat-flat-button color="warn" mat-dialog-close>Cancel</button>
+</div>
